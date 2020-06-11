@@ -9,53 +9,87 @@
 	<body>
 		<p>Test tekstas</p>
 		<form>
-			<table border="1">
-				<tr>
-					<td>
-						<label for="name">Asmens vardas: </label>
-					</td>
-					<td colspan="2">
-						<input type="text" id="name" name="name" placeholder="Įveskite savo vardą" required>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="city">Asmens vietovė:</label>
-					</td>
-					<td colspan="2">
-						<input type="text" id="city" name="city" value="Kauno raj." readonly>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="date">
-					</td>
-					<td>
-						<input type="email" placeholder="Jūsų el. pašto adresas">
-					</td>
-					<td>
-						<select>
-							<option value="">Pasirink paslaugą</option>
-							<option value="Kasti (dideli sklypa)">Kasti</option>
-							<option value="Rauti">Rauti</option>
-							<option value="Pjauti">Pjauti</option>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="password" placeholder="Sukurkite slaptažodį">
-					</td>
-					<td colspan="2">
-						<textarea></textarea>
-					</td>
-				</tr>
-				<tr>
-					<th colspan="3">
-						<input type="submit" value="Siųsti">
-					</th>
-				</tr>
-			</table>
+			<fieldset>
+				<legend>Asmens duomenys</legend>
+				<table border="1">
+					<tr>
+						<td>
+							<label for="name">Asmens vardas: </label>
+						</td>
+						<td colspan="2">
+							<input type="text" id="name" name="name" placeholder="Įveskite savo vardą" required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="city">Asmens vietovė:</label>
+						</td>
+						<td colspan="2">
+							<input type="text" id="city" name="city" value="Kauno raj." readonly>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+			<fieldset>
+				<legend>Pomėgiai</legend>
+				<table border="1">
+					<tr>
+						<td>
+							<input type="date">
+						</td>
+						<td>
+							<input type="email" placeholder="Jūsų el. pašto adresas">
+						</td>
+						<td>
+							<select name="service">
+								<option value="">Pasirink paslaugą</option>
+								<option value="Kasti (dideli sklypa)">Kasti</option>
+								<option value="Rauti">Rauti</option>
+								<option value="Pjauti">Pjauti</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="password" placeholder="Sukurkite slaptažodį">
+						</td>
+						<td colspan="2">
+							<textarea></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span>Pasirinkite hobį:</span>
+							<input type="checkbox" id="hobby-swim" name="hobby-swim">
+							<label for="hobby-swim">Plaukimas</label>
+							<input type="checkbox" id="hobby-run" name="hobby-run">
+							<label for="hobby-run">Bėgimas</label>
+						</td>
+						<td>
+							<input type="radio" id="gender-male" name="gender">
+							<label for="gender-male">Vyras</label>
+
+							<input type="radio" id="gender-female" name="gender">
+							<label for="gender-female">Moteris</label>
+
+							<input type="radio" id="gender-no-matter" name="gender">
+							<label for="gender-no-matter">Nesakysiu/nesvarbu</label>
+						</td>
+					</tr>
+					<tr>
+						<th colspan="3">
+							<input type="submit" value="Siųsti">
+						</th>
+					</tr>
+				</table>
+			</fieldset>
 		</form>
+
+		<p>Norint sukurti paragrafą reikia rašyti &lt;p&gt;, o uždaryti reikia rašyti šitaip &lt;&sol;&#112;&gt;</p>
+		<div>
+			<div>
+				<p>Blokinis elementas dvieju blokinių div viduje.</p>
+			</div>
+		</div>
 	</body>
 </html>
