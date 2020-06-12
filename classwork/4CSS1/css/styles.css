@@ -1,0 +1,60 @@
+/* MAIN STYLES FILE */
+
+/* Reset styles */
+body {
+	font-size: 10px;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* custom styles */
+
+p {
+	/* !important is highly not recommended */
+	color: blue!important;
+}
+
+#description {
+	text-decoration: underline;
+}
+
+.special-price {
+	color: orangered;
+}
+
+html body div div.border-big {
+	border: 2px solid black;
+}
+
+a[target="_blank"] {
+	background-color: yellow;
+}
+
+a:hover {
+	color: grey;
+	background-color: #e4e5ed;
+}
+
+body div:last-child span:first-child {
+	color: green;
+}
+
+.different-font {
+	/* class name is not telling what element is about */
+	font-family: 'Anton', sans-serif;
+}
+
+.last-minute-offer {
+	font-weight: bold;
+}
+
+.product-page.button {
+	text-transform: uppercase;
+}
+
+.product-page.button.buy {
+	letter-spacing: 3px;
+	opacity: 0.4;
+}

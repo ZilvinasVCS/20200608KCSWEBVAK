@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Styling our text with CSS</title>
+		<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+		<link href="css/styles.css" rel="stylesheet">
+		<style>
+			span.last-minute-offer {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="color: red; font-size: 70px;">
+			First style
+			<span>page</span>
+		</h1>
+		<p id="description">We will create some text and later on we'll style it.</p>
+		<!-- special price color will be overwritten by !important -->
+		<p id="price" class="special-price border-big">50 &euro;</p>
+		<div>
+			<div class="border-big product-page buy button">
+				<a href="https://www.lrs.lt" target="_blank">Buy now</a>
+			</div>
+		</div>
+		<div class="border-big product-page button">
+			<a href="www.google.lt">Add to cart</a>
+		</div>
+		<p>Contact us</p>
+		<div>
+			<span>Floating text.</span>
+			<span class="different-font">Floating text.</span>
+			<span class="last-minute-offer" style="font-weight: 100">The last item! Hurry to buy!</span>
+		</div>
+	</body>
+
+</html>
