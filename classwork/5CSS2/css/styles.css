@@ -1,0 +1,27 @@
+/* visos automobilio detales turi buti 200px aukscio ir plocio, zaliu fonu, 2px plocio remeliu is visu krastu */
+
+body, span, div {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.car div, .car span {
+	width: 200px;
+	height: 200px;
+	background: green;
+}
+
+.car span {
+	display: inline-block;
+}
+
+.car__rear-wheels-wrapper {
+	border: 1px solid red;
+}
+
+.bdar-container {
+	width: 100%;
+	background: yellow;
+	text-align: center
+}

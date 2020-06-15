@@ -1,0 +1,28 @@
+/* in this CSS file we write ONLY positions / moving styles */
+
+.car {
+	position: relative;
+}
+
+.car__front-wheels, .car__rear-wheels, .car__rear-wheels-wrapper {
+	position: inherit;
+}
+
+.car__front-wheels, .car__rear-wheels {
+	top: 50px;
+}
+
+.car__rear-wheels {
+	position: absolute;
+	top: 20px;
+}
+
+.bdar-container {
+	position: fixed;
+	bottom: 0;
+}
+
+.bottom-menu {
+	position: absolute;
+	left: 200px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="lt">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Lithuanian flag</title>
+		<style>
+			#flag-container {
+				min-width: 600px;
+				text-align: center;
+				margin: 0 0 0 40px;
+				border: 3px solid black;
+				border-radius: 30px;
+			}
+
+			#flag-container > div {
+				/* better to use shorthand border: 2px solid black */
+				/*border-width: 2px;
+				border-style: solid;
+				border-color: black;*/
+				border-bottom: 5px solid black;
+
+				padding-left: 60px;
+				padding-right: 60px;
+
+				/* there is no need to center elements here cause they inherit styles from parent elements */
+			}
+
+			#flag-container > div:first-child {
+				border-top-left-radius: 30px;
+				border-top-right-radius: 30px;
+			}
+
+			#flag-container > div:last-child {
+				border: none;
+				border-bottom-left-radius: 30px;
+				border-bottom-right-radius: 30px;
+			}
+
+			.flag-top {
+				background-color: yellow;
+			}
+
+			.flag-middle {
+				background-color: green;
+
+				/*border-top: 5px solid black;
+				border-bottom: 5px solid black;*/
+			}
+
+			.flag-bottom {
+				background-color: red;
+			}
+
+			h1, #flag-container {
+				font-size: 86px;
+			}
+
+			.hidden {
+				/* visibility: hidden; */
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--
+			Sukurkite Lietuvos veliava. Naudojant elementus <div> arba <span>. Naudojant stilizavima (styles dokumente).
+			Negalima naudoti <table>
+			width: 300px
+		-->
+		<h1>Vėliava</h1>
+		<div id="flag-container">
+			<div class="flag-top">geltona</div>
+			<div class="flag-middle">žalia</div>
+			<div class="flag-bottom hidden">raudona</div>
+		</div>
+		<p>Lietuvos vėliava.</p>
+	</body>
+</html>
