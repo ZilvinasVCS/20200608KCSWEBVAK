@@ -1,5 +1,11 @@
 /* visos automobilio detales turi buti 200px aukscio ir plocio, zaliu fonu, 2px plocio remeliu is visu krastu */
 
+/*	z-index layer:
+*	0: default
+*	1: main-info: text, images
+*	2: pop up window: bdar, newsletter
+*/
+
 body, span, div {
 	margin: 0;
 	padding: 0;
@@ -12,7 +18,7 @@ body, span, div {
 	background: green;
 }
 
-.car span {
+.car .a1 span {
 	display: inline-block;
 }
 
@@ -24,4 +30,11 @@ body, span, div {
 	width: 100%;
 	background: yellow;
 	text-align: center
+}
+span.car__rear-wheels--red {
+	background: red;
+}
+
+div.car--blue span.car__front-wheels {
+	z-index: 1;
 }
