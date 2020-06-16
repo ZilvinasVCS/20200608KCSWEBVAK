@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>12 grid page | News website</title>
+
+		<style>
+
+			* {
+				box-sizing: border-box;
+			}
+
+			main#content > section, main#content > aside {
+				border: 1px solid red;
+			}
+
+			main#content {
+				display: flex;
+			}
+
+			aside.additional-info div.google-maps-wrapper span iframe {
+				width: 100%;
+				height: auto;
+				border: none;
+			}
+
+			/* 12 grid system from web */
+			.col-1 {width: 8.33%;}
+			.col-2 {width: 16.66%;}
+			.col-3 {width: 25%;}
+			.col-4 {width: 33.33%;}
+			.col-5 {width: 41.66%;}
+			.col-6 {width: 50%;}
+			.col-7 {width: 58.33%;}
+			.col-8 {width: 66.66%;}
+			.col-9 {width: 75%;}
+			.col-10 {width: 83.33%;}
+			.col-11 {width: 91.66%;}
+			.col-12 {width: 100%;}
+
+			[class*="col-"] {
+				float: left;
+				padding: 10px;
+			}
+
+			@media screen and (max-width: 600px) {
+				main#content {
+					flex-direction: column;
+				}
+
+				main#content > section, main#content > aside {
+					width: 100%;
+				}
+			}
+
+			@media screen and (min-width: 1200px) {
+				main#content > section, main#content > aside {
+					border: 0;
+				}
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<header id="header" class="col-12">
+			Header
+		</header>
+		<main id="content" class="col-12">
+			<section class="col-9">
+				<h2>Sport news</h2>
+				<article class="col-3 images-thumbs">
+					<h5>Small images</h5>
+				</article>
+				<article class="col-6 main-content-wrapper">
+					<h5>Welcome page</h5>
+					<p>Welcome to our page.</p>
+				</article>
+			</section>
+			<aside class="col-3 additional-info">
+				<div class="google-maps-wrapper">
+					<span>
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73431.45995155317!2d23.857224212544036!3d54.89005359116584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e72270b167d343%3A0x614bd1e0c7378bbc!2sKaunas!5e0!3m2!1slt!2slt!4v1592324761044!5m2!1slt!2slt" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+					</span>
+				</div>
+			</aside>
+		</main>
+		<footer id="footer-main" class="col-12">
+			Footer
+		</footer>
+	</body>
+</html>
