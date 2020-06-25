@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Filtering with jQuery</title>
+</head>
+
+<body>
+	<h1>Simple filter</h1>
+	<input id="input-text">
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>City</th>
+			<th>Age</th>
+		</tr>
+		<tr class="data-row">
+			<td>ŽILVINAS</td>
+			<td>Vaišnoras</td>
+			<td>33</td>
+		</tr>
+		<tr class="data-row">
+			<td>Rimvynas</td>
+			<td>Tomtpas</td>
+			<td>11</td>
+		</tr>
+		<tr class="data-row">
+			<td>Olga</td>
+			<td>Pasvamas</td>
+			<td>111</td>
+		</tr>
+	</table>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('input#input-text').on('keyup', function () {
+				let $inputValue = $(this).val(); // Žil
+				$inputValue = $inputValue.toLowerCase(); //žil
+				$('table tr.data-row').filter(function () {
+					$(this).toggle($(this).text().toLowerCase().indexOf($inputValue) > -1);
+					// TODO: rodyti, kad jei duomenys nerasti
+				});
+			});
+		});
+	</script>
+</body>
+</html>
