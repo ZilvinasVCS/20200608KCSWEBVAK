@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>jQuery</title>
+		<style>
+			h1#page-main-title {
+				position: relative;
+				border: 1px dotted green;
+			}
+
+			.hover {
+				color: blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 id="page-main-title">jQuery sandbox</h1>
+		<p id="demo-text">Our test texts and bla bla.</p>
+		<p>Something new bla bla</p>
+		<p>DOesn't matter bla bla.</p>
+		<input type="text" id="input-text">
+		<button onclick="alertInsertedText()">Button</button>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script>
+			$(document).ready(function () {
+			let testText = 'Hi';
+			let javascriptSelector = document.getElementById('page-main-title').innerHTML;
+			let $jQuerySelector = $('#demo-text');
+
+			console.log($jQuerySelector);
+
+			// jQuery
+			// sukurkite funkcija. funkcija skirta alertinti kas suvesta i input'a.
+			// iskviesti funkcija kuomet paspaudziamas mygtukas (button).
+			function alertInsertedText() {
+				let inputValue = document.getElementById('input-text').value;
+				let $inputValue = $('#input-text').val();
+				alert($inputValue);
+			}
+
+			// function calling is changed with $(document).ready();
+			//function animateH1OnClick() {
+				$('h1#page-main-title').click(function () {
+					$('#page-main-title').animate(
+						{
+							left: '200px',
+							borderWidth: '20px', // comma is not destroying
+						},
+						6000,
+						function () {
+							console.log('Animation is done');
+						}
+					);
+				});
+			//}
+				$('p').hover(
+					function () {
+						$(this).addClass('hover');
+					},
+					function () {
+						$(this).removeClass('hover');
+					}
+				);
+			});
+		</script>
+	</body>
+</html>
