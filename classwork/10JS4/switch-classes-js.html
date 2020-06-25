@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Switch classes with JS</title>
+		<style>
+			.alert-message {
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p id="main-content">Some demo text which color will be changed.</p>
+		<p id="text-red-text">I want to be red.</p>
+		<button id="change-color">Change paragraph color</button>
+		<script>
+
+			// 1. sukurti mygtuka, kuris keis spalva. Done.
+			// 2. paspaudus mygtuka mums reikia paragrafui prideti nauja class kurios pavadinimas bus alert-message
+			var changeColorButton = document.querySelector('button#change-color');
+			changeColorButton.addEventListener('click', changeTextColor);
+
+			function changeTextColor() {
+
+				// 1. budas pasiekti rezultata.
+				// changableText.style.color = 'red';
+				toggleClassName('alert-message', 'main-content');
+				toggleClassName('alert-message', 'text-red-text');
+			}
+
+			function toggleClassName(className, elementIdName) {
+				// 2. prideti papildoma klase.
+				var changableText = document.getElementById(elementIdName);
+				if (changableText.classList.contains(className)) {
+					changableText.classList.remove(className);
+					writeToConsole('Class name "' + className + '" was removed.');
+				} else {
+					changableText.classList.add(className);
+				}
+			}
+
+			function writeToConsole(textToLog) {
+				console.log(textToLog);
+			}
+
+			// 3. mums reikia <head> dalyje deklaruoti stilius ir klasei alert-message uzdeti teksto spalva raudona.
+			// 4. paspaudus dar karteli mygtuka grazintu paragrafo teksto spalva i pradine padeti
+			// 5. perkelkite visa klases tikrinima ir pridejima i atskira funkcija. iskvieskite ta funkcija. funckijos kvietime paduokite viena argumenta - klases pavadinimas
+			// 6. sukurkite nauja funkcija writeToConsole. su vienu reikalingu jai argumentu. iskvieskite ta funkcija tik tuomet kai klase yra panaikinama.
+		</script>
+	</body>
+</html>
