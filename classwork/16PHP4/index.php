@@ -6,6 +6,7 @@ class Car {
 	public $price = 1000;
 	public $currency = 'EUR';
 	public $carAge;
+	public $pagaminodata = 2019;
 
 	// functions in classes are called METHODS.
 	public function setManufactorName($manufactorName)
@@ -44,6 +45,5 @@ $car2->setManufactorName('NISSAN');
 echo $car2->getManufactorName() . "\n\n\n";
 
 echo $car2->carAge(1986)->valueAfterSomeYears()->price;
-
 
 ?>
