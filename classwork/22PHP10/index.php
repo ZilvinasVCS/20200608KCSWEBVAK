@@ -2,6 +2,7 @@
 	$pageTitle = 'All items';
 	include('layout-header.php');
 
+	include_once('config/core.php');
 	include_once('config/database.php');
 	include_once('objects/category.php');
 	include_once('objects/item.php');
@@ -12,8 +13,10 @@
 	$category = new Category($db);
 	$item = new Item($db);
 
-	$stmt = $item->readAllItems();
+	$stmt = $item->readAllItems($itemsFromNumber, $itemsPerPage); // reikes patobulinti ir skaitysime irasus tik tuos, kurie reikalingi tame puslapyje
 	$numOfRows = $stmt->rowCount();
+
+	$totalItemsRows = $item->countAllItems(); // skaiciuoja visu irasu skaiciu
 
 ?>
 
@@ -21,34 +24,8 @@
 	<a href="create-item.php" class="btn btn-info pull-right">Add new item to the list</a>
 </div>
 
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <?php
 	if ($numOfRows > 0) {
-		// ciklu while mes visus irasus 'ismesim' cia
-		/*
-			jums reikia sukurti <table>
-			ir reikia pirmaji <tr> sukurti kuris talpins <th>: name, price, descr, Cateogry, Actions
-			antroji eilute ir visos kitos tai su while ciklu atvaizduojama daiktu informacija is duomenubazes
-		*/
 		echo "<table class='table'>
 				<tr>
 					<th>Name</th>
@@ -78,6 +55,7 @@
 				echo "</tr>";
 		}
 		echo "</table>";
+		include('pagination.php');
 	} else {
 		echo "<div class='alert alert-info' role='alert'>No items in a list</div>";
 	}
