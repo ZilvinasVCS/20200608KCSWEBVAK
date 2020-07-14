@@ -3,7 +3,7 @@
 
 	$totalPages = ceil($totalItemsRows / $itemsPerPage); // expected value 4 pages
 		// if first page than don't show any "first" row and show from zero.
-	$visiblePageRange = 2;
+	$visiblePageRange = 3; //TODO: move to core.php
 	$initialNumber = $page - $visiblePageRange; // rodysim nuo 1
 	$limitationPageNumber = ($page + $visiblePageRange); // rodysim iki 5 puslapio
 	
@@ -27,10 +27,10 @@
 	}
 
 	if ($page < $totalPages) {
-		$firstLi = "<li class='page-item'><a href='{$mainPageUrl}?page={$totalPages}' class='page-link'>";
-		$firstLi .= "Last page";
-		$firstLi .= "</a></li>";	
-		echo $firstLi;
+		$lastLi = "<li class='page-item'><a href='{$mainPageUrl}?page={$totalPages}' class='page-link'>";
+		$lastLi .= "Last page";
+		$lastLi .= "</a></li>";
+		echo $lastLi;
 	}
 	
 	echo "</ul>";

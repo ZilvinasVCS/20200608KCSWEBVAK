@@ -138,4 +138,23 @@ class Item {
 		
 		return $numberOfItems;
 	}
+
+	public function deleteOneItem($id = 0)
+	{
+		//TODO: is $id a number...
+		if ($id > 0) {
+			$query = "DELETE FROM {$this->tableName} WHERE id=:id;"; //SQL sakinys nurodantis istrinti irasa.
+			$stmt = $this->conn->prepare($query);
+			$stmt->bindParam(':id', $id);
+
+			// execute
+			if ($stmt->execute()) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			die('Only positive ID numbers are allowed!!!');
+		}
+	}
 }
